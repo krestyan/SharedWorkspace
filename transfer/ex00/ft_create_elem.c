@@ -1,17 +1,17 @@
 #include "ft_list.h"
 #include <stdlib.h>
 
-t_list *ft_create_elem(void *data)
+t_list	*ft_create_elem(void *data)
 {
-    t_list  *output;
+	t_list *output;
 
-    output = malloc(sizeof(t_list));
-    if (output)
-    {
-        output->data = data;
-        output->next = 0;
-    }
+	output = malloc(sizeof(t_list));
+	if (output)
+	{
+		output->data = data;
+		output->next = 0;
+	}
 	else
 		output = 0;
-    return (output);
+	return (output);
 }
