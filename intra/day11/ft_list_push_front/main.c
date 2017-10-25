@@ -1,34 +1,43 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: akrestya <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/24 15:37:28 by akrestya          #+#    #+#             */
-/*   Updated: 2017/10/24 16:55:03 by akrestya         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "ft_list.h"
 #include <stdio.h>
 
-void ft_list_push_front(t_list **begin_list, int data);
+void ft_list_push_back(t_list **begin_list, void *data);
+void    ft_list_push_front(t_list **begin_list, void *data);
+int     ft_list_size(t_list *begin_list);
+t_list  *ft_list_last(t_list *begin_list);
+t_list      *ft_list_push_params(int ac, char **av);
 
-int main(void)
+
+int main(int ac, char **av)
 {
-    int i;
+    char *i[] = {"42", "asd", "123"};
     t_list *list;
+    t_list *crawl;
 
-	list = NULL;
-    i = 42;
-    int j = 53;
-    ft_list_push_front(&list, i);
-    ft_list_push_front(&list, j);
-	while (list)
-	{
-		printf("%d\n", list->data);
-		list = list->next;
-	}
+    list = NULL;
+    list = ft_list_push_params(ac, av);
+    /*int counter = 0;
+    while (counter < 3)
+        ft_list_push_front(&list, &i[counter++]);*/
+
+
+
+    //print list's elements
+    crawl = list;
+    char **n = crawl->data;
+    while (crawl)
+    {
+        n = crawl->data;
+        printf("%s\n", *n);
+        crawl = crawl->next;
+    }
+    //print list size
+    printf("List size: %d\n", ft_list_size(list));
+
+    //print last element's data
+    crawl = ft_list_last(list);
+    n = crawl->data;
+    printf("List last: %s\n", *n);
+
     return (0);
 }
