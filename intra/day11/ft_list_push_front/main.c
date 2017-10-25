@@ -7,6 +7,7 @@ int     ft_list_size(t_list *begin_list);
 t_list  *ft_list_last(t_list *begin_list);
 t_list      *ft_list_push_params(int ac, char **av);
 void    ft_list_clear(t_list **begin_list);
+t_list  *ft_list_at(t_list  *begin_list, unsigned int nbr);
 
 
 int main(int ac, char **av)
@@ -39,6 +40,11 @@ int main(int ac, char **av)
     crawl = ft_list_last(list);
     n = crawl->data;
     printf("List last: %s\n", *n);
+
+    unsigned int o = 2;
+    crawl = ft_list_at(list, o);
+    n = crawl->data;
+    printf("%s\n", *n);
 
     ft_list_clear(&list);
 
