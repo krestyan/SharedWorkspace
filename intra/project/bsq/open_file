@@ -1,0 +1,54 @@
+#include "bsq.h"
+
+t_map *open_file(char *file)
+{
+	int 	fd;
+	int 	ret;
+	char	str[1];
+	char	line[255];
+	t_map	*map;
+	int		len;
+
+	map = malloc(sizeof(t_map));
+	fd = open(file, O_RDONLY);
+	if (fd == -1)
+	{
+		ft_putstr("Error!\n");
+	}
+	int i  = 0 ;
+	while (read(fd, str, 1) && str[0] != '\n')
+		line[i++] = str[0];
+	line[i] = 0;
+
+	printf("str = (%s)\n", line);
+
+	len = ft_strlen(line);
+
+	map->full = line[len - 1];
+	map->obs = line[len - 2];
+	map->empty = line[len - 3];
+	line[len - 3] = '\0';
+	map->line = ft_atoi(line);
+	printf("%c\n", map->full);
+	printf("%c\n", map->obs);
+	printf("%c\n", map->empty);
+	printf("%d\n", map->line);
+
+
+
+	line[0] = 0;
+	i  = 0 ;
+	while (read(fd, str, 1))
+		line[i++] = str[0];
+	line[i] = 0;
+	//printf("%s", line);
+	//map[x][y];
+	map->map = ft_split_whitespaces(line);
+	i = 0;
+	while(i < map->y)
+	{
+		printf("%s\n", map->map[i]);
+		i++;
+	}
+	return (map);
+}

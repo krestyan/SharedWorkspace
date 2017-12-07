@@ -28,15 +28,16 @@ void    char_to_byte(char *byte, unsigned char octet)
     int i = 7;
     while (octet)
     {
-        byte[i] = octet % 2 + '0';
+        byte[i--] = octet % 2 + '0';
         octet /= 2;
-        i--;
     }
 }
 
 unsigned char byte_to_char(char *byte)
 {
     unsigned char output = 0;
+
+    //01000000
 
     while (*byte)
     {

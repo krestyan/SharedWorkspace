@@ -9,7 +9,6 @@ int     ft_strlen(int *str)
     {
         size++;
     }
-    printf("size = %i\n", size);
     return (size);
 }
 
@@ -19,7 +18,7 @@ int		max(int *tab, unsigned int len)
     int i;
 
     i = 0;
-    max = 0;
+    max = tab[i];
     printf("looking for max..\n");
     while(i < len)
     {
@@ -33,7 +32,7 @@ int		max(int *tab, unsigned int len)
 
 int     main(void)
 {
-    int str1[20] = {3, 5, 21, 9, 0, 1, 2, 11};
+    int str1[20] = {-3, -5, -21, -9, -1, 2, -11};
     int m;
 
     max(str1, ft_strlen(str1));

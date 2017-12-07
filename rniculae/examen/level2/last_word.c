@@ -12,7 +12,7 @@ int main(int arg_c, char **arg_v)
     while(str[i])
     {
         if (str[i] < 33 && str[i + 1] >= 33 && str[i + 1] <= 127)
-            j = i +1;
+            j = i + 1;
         i++;
     }
 

@@ -20,36 +20,32 @@ void    ft_putchar(char c)
     write(1, &c, 1);
 }
 
-int     check(char *str, char c, int len)
-{
-	int		i;
-
-	i = 0;
-	while (str[i] && (i < len || len == -1))
-	{
-		if (str[i] == c)
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
-void    inter(char *str1, char *str2)
+int     check(char *str, char c, int nb) // cauta sa vada daca ai un 
 {
     int i = 0;
-	while (str1[i])
-	{
-		if (!check(str1,str1[i], i) && check(str2, str1[i], -1))
-			ft_putchar(str1[i]);
-		i++;
-	}
+    while ((i < nb || nb == -1) && str[i])
+    {
+        if (str[i] == c)
+            return 1;
+        i++;
+    }
+    return 0;
+}
+
+void    inter(char *s1, char *s2)
+{
+    int i = 0;
+    while (s1[i])
+    {
+        if (!check(s1, s1[i], i) && check(s2, s1[i], -1))
+            ft_putchar(s1[i]);
+        i++;
+    }
 }
 
 int     main(int ac, char **av)
 {
     if (ac == 3)
-    {
         inter(av[1], av[2]);
-    }
     ft_putchar('\n');
 }

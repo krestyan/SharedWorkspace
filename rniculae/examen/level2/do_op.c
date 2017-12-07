@@ -1,3 +1,44 @@
+/* //        \\
+  //          \\
+ //            \\
+//==============\\
+//   E X A M    \\
+//==============\\
+
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+int		main(int argc, char **argv)
+{
+	if(argc != 4)
+		ft_putchar('\n');
+	else if(argv[2][1] != '\0')
+		ft_putchar('\n');
+	else
+	{
+		int x = atoi(argv[1]);
+		int y = atoi(argv[3]);
+
+		if 		(argv[2][0] == '+')
+			printf("%d\n", x+y);
+		else if (argv[2][0] == '-')
+			printf("%d\n", x-y);
+		else if (argv[2][0] == '*')
+			printf("%d\n", x*y);
+		else if (argv[2][0] == '/')
+			printf("%d\n", x/y);
+		else if (argv[2][0] == '%')
+			printf("%d\n", x%y);
+	}
+}
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -38,3 +79,4 @@ int main(int arg_c, char **arg_v)
 
     return (0);
 }
+
