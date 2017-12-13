@@ -1,30 +1,22 @@
+#include "includes/libft.h"
+
 #include <stdio.h>
-#include <string.h>
+int     main()
+{
+	char const s1[] = "    Gigel are mere      ";
+    t_list list;
 
-#include "libft.h"
 
-int ft_memcmp(const void *s1, const void *s2, size_t n);
+    list = ft_lstnew((void const*)s1, 5);
+    void *s2 = list->content;
+    printf("==============\n= STRING ORG =\n==============\ns1:(%s)\n\n",(char *)s2);
 
-
-int main () {
-   char str1[15];
-   char str2[15];
-   int ret;
-
-   memcpy(str1, "abcdef", 6);
-   memcpy(str2, "ABCDEF", 6);
-
-   ret = memcmp(str1, str2, 5);
-   
-   printf("ret: %d\n", memcmp(str1, str2, 5));
-
-   if(ret > 0) {
-      printf("str2 is less than str1");
-   } else if(ret < 0) {
-      printf("str1 is less than str2");
-   } else {
-      printf("str1 is equal to str2");
-   }
-   
-   return(0);
+	printf("==============\n= ft_strsplit =\n==============\n");
+	int i = 0;
+	while(i < 3)
+	{
+	    printf("%s\n", s3[i]);
+	    i++;
+	}
+    return 0;
 }

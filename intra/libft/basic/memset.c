@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "../includes/libft.h"
 
 void *ft_memset(void * ptr, int value, size_t num)
 {
@@ -6,9 +6,10 @@ void *ft_memset(void * ptr, int value, size_t num)
     {
         char *d = ptr;
         *d++ = value;
-        while(--num)
+        while(num >= 0)
         {
             *d++ = value;
+            num--;
         }
     }
     return ptr;
