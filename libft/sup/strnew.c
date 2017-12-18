@@ -3,7 +3,10 @@
 char    *ft_strnew(size_t size)
 {
     char *output;
-    if(size)
+
+	if(size == 0)
+		return ("\0");
+	else
     {
         output = ft_memalloc(size + 1);
 		if(!output)
@@ -15,5 +18,4 @@ char    *ft_strnew(size_t size)
         }
         return (output);
     }
-    return NULL;
 }

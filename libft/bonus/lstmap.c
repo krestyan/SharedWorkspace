@@ -9,7 +9,7 @@ t_list * ft_lstmap(t_list *lst, t_list * (*f)(t_list *elem))
     
     if(f == NULL || lst == NULL)
         return NULL;
-    
+    root = NULL;
     crawl = NULL;
     *root = crawl;
     while(lst)
@@ -23,4 +23,5 @@ t_list * ft_lstmap(t_list *lst, t_list * (*f)(t_list *elem))
             crawl = crawl->next;
         lst = next;
     }
+	return (*root);
 }

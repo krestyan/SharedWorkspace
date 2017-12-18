@@ -7,7 +7,7 @@ OBJ = *.o
 all: $(NAME)
 
 $(NAME):
-	    gcc $(CFLAGS) $(SRC) basic/$(SRC) sup/$(SRC)
+	    gcc $(CFLAGS) $(SRC) basic/$(SRC) sup/$(SRC) bonus/$(SRC)
 		    ar rc $(LIBNAME) $(OBJ)
 			    ranlib libft.a
 

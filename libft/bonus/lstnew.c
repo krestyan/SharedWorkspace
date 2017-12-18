@@ -10,13 +10,21 @@ typedef struct  s_list
 t_list  *ft_lstnew(void const *content, size_t content_size)
 {
     t_list *new;
-    if (content == NULL)
-        content_size = 0;
+	void	*content_new;
 
     new = malloc(sizeof(t_list));
+	content_new = malloc(content_size);
+	if(!content_new)
+		return (NULL);
+	content_new = ft_memcpy(content_new, content, content_size);
+    if (content == NULL)
+	{
+		content_new = NULL;
+        content_size = 0;
+	}
     if(new)
     {
-        new->content = (void*)content;
+        new->content = content_new;
         new->content_size = content_size;
     }
 

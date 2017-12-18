@@ -8,10 +8,11 @@ void ft_lstdel(t_list **alst, void (*del)(void *,size_t))
     crawl = *alst;
     while(crawl)
     {
-        next = alst->next;
-        ft_lstdelone(crawl, del);
+        next = crawl->next;
+        ft_lstdelone(&crawl, del);
         crawl = next;
     }
+	*alst = NULL;
 }
 
 /*
