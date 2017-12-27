@@ -2,7 +2,7 @@
 /*
 typedef struct  s_list
 {
-    void *content;
+0    void *content;
     size_t content_size;
     struct s_list *next;
 }               t_list;
@@ -10,6 +10,7 @@ typedef struct  s_list
 t_list  *ft_lstnew(void const *content, size_t content_size)
 {
     t_list *new;
+
     if (content == NULL)
         content_size = 0;
 

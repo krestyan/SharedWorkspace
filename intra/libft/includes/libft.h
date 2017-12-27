@@ -12,7 +12,7 @@ typedef struct  s_list
     struct s_list *next;
 }               t_list;
 
-
+/*** Part I ***/
 int		ft_atoi(char *str);
 int     ft_isalnum(int c);
 int     ft_isalpha(int c);
@@ -41,10 +41,7 @@ char    *ft_strnstr(const char *haystack, const char *needle, size_t len);
 char    *ft_strrchr(const char *s, int c);
 char    *ft_strstr(const char *haystack, const char *needle);
 
- //=====\\
-//Part 2 \\
-\\=======//
-
+/*** Part II ***/
 void    ft_putchar(char c);
 void    ft_putstr(char const *s);
 void    ft_putnbr(int n);
@@ -70,8 +67,12 @@ char    *ft_strnew(size_t size);
 char    **ft_strsplit(char const *s, char c);
 char    *ft_strsub(char const *s, unsigned int start, size_t len)
 
- //=====\\
-//Bonus  \\
-\\=======//
+/*** Bonus ***/
+t_list * ft_lstnew(void const *content, size_t content_size);
+void ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
+void ft_lstdel(t_list **alst, void (*del)(void*, size_t));
+void ft_lstadd(t_list **alst, t_list *new);
+void ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list * ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 #endif

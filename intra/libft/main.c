@@ -3,7 +3,15 @@
 #include <stdio.h>
 int     main()
 {
-	char const s1[] = "    Gigel are mere      ";
+    char const s1[] = "This is great!";
+    char const s2[] = "great";
+    char *out;
+
+    out = ft_strnstr(s1, s2, 7);
+    printf("%s\n", out);
+    out = (char*)strnstr(s1,s2, 7);
+    printf("%s\n", out);
+	/*char const s1[] = "    Gigel are mere      ";
     t_list list;
 
 
@@ -17,6 +25,6 @@ int     main()
 	{
 	    printf("%s\n", s3[i]);
 	    i++;
-	}
+	}*/
     return 0;
 }
