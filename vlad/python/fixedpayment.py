@@ -3,14 +3,15 @@ def fixed(balance, annualInterestRate):
     res = 10
     b1 = balance
     while b1 > 0:
-        b0 = balance
-        for i in range(0, 12):
-            b0 = (b1 - res) + annualInterestRate/12*(b1-res)
-            b1 = b0
-            print('i=', i, 'b1 = ', b1)
-            if (abs(b1) > res):
-                res += 10
-                print('res = ', res)
+    	res += 10
+    	b1 = balance
+    	month = 1
+    	while month <= 12 and b1 > 0:
+    		b1 -= res
+    		interest = annualInterestRate/12 * b1
+    		b1 += interest
+    		month += 1
+    	b1 = round(b1, 2)
     return res
 
 balance = 3329
